@@ -1,12 +1,13 @@
 // module imports
 const express = require('express');
-// const routes = require('./controllers');
+const routes = require('./controllers');
 const sequelize = require('./config/connection');
 
 
 // create server
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 
 // session data
 // placeholder ...................
@@ -18,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // turn on routes
-// app.use(routes);
+app.use(routes);
 
 
 // connect to db and server
