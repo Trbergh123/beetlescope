@@ -1,3 +1,13 @@
 const User = require('./Users');
+const Project = require('./Projects');
 
-module.exports = { User };
+// module associations
+User.hasMany(Project, {
+    foreignKey: 'user_id'
+});
+
+Project.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+module.exports = { User, Project };
