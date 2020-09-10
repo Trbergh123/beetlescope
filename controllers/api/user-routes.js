@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-//get all users
-router.get('/', (req, res) => {
+const { authUser, authRole } = require('../../utils/auth');
+//get all users --should be logged in to do so, bring in authUser
+router.get('/', authUser, (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] }
     })
@@ -11,8 +12,8 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
     });
 });
-//get user by id
-router.get('/:id', (req, res) => {
+//get user by id ---should also be logged in
+router.get('/:id', authUser, (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
         where: {
@@ -80,7 +81,7 @@ router.post('/login', (req, res) => {
     });
 });
 
-//update user info
+//update user info ---need to figure out permissions here
 router.put('/:id', (req, res) => {
     User.update(req.body, {
         individualHooks: true,
@@ -101,8 +102,8 @@ router.put('/:id', (req, res) => {
     });
 });
 
-//delete a user
-router.delete('/:id', (req, res) => {
+//delete a user ---only admins should be able to delete users
+router.delete('/:id', authUser, authRole(user_role.ADMIN), (req, res) => {
     User.destroy({
         where: {
             id: req.params.id
