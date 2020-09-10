@@ -30,7 +30,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session(sess));
 app.use(setUser);
-// app.use('/projects', projectRouter);
+
 
 // turn on routes
 app.use(routes);
