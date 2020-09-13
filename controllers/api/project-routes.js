@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
             'title',
             'project_text',
             'user_id',
-            'users_with_access'
+            'users_with_access',
+            'created_at'
         ],
         include: [
             {
@@ -32,7 +33,8 @@ router.get('/:id', (req, res) => {
             'title',
             'project_text',
             'user_id',
-            'users_with_access'
+            'users_with_access',
+            'create_at'
         ],
         include: [
             {
