@@ -3,6 +3,7 @@ const { Project, User } = require('../../models');
 
 // get all
 router.get('/', (req, res) => {
+    
     Project.findAll({
         attributes: [
             'id',
@@ -20,6 +21,7 @@ router.get('/', (req, res) => {
         ]
     })
     .then(dbProjectData => res.json(dbProjectData))
+   
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
