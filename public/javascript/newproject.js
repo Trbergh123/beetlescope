@@ -2,7 +2,8 @@ const newFormHandler = async function(event) {
     event.preventDefault();
   
     const title = document.querySelector('input[name="project-title"]').value;
-    const body = document.querySelector('textarea[name="project-text"]').value;
+    const project_text = document.querySelector('textarea[name="project-text"]').value;
+    const users_with_access = document.querySelector('option[name="project-users"]').value;
   
     const token = localStorage.getItem("token");
     await fetch(`/api/projects`, {
@@ -17,10 +18,11 @@ const newFormHandler = async function(event) {
         authorization: `Bearer ${token}`
       }
     });
+    
   
     document.location.replace("/myprojects");
  
 };
   document
     .querySelector("#new-project-form")
-    .addEventListener("submit", newFormHandler);
+    .addEventListener("submit-project", newFormHandler);
