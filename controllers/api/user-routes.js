@@ -1,17 +1,18 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const { authUser, authRole } = require('../../utils/auth');
+
 //get all users --should be logged in to do so, bring in authUser
-// router.get('/', authUser, (req, res) => {
-//     User.findAll({
-//         attributes: { exclude: ['password'] }
-//     })
-//     .then(dbUserData => res.json(dbUserData))
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// });
+router.get('/', /*authUser,*/ (req, res) => {
+    User.findAll({
+        attributes: { exclude: ['password'] }
+    })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 //get user by id ---should also be logged in
 // router.get('/:id', authUser, (req, res) => {
 //     User.findOne({
