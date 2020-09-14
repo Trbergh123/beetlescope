@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { User, Project, Issue, Comment } = require('../models');
 const { authUser } = require('../utils/auth');
 
-///get all projects for dashboard --so we have something to display for now
+///
 router.get('/',  (req, res) => {
 //     console.log(req.session);
 //     console.log('==============');
@@ -30,6 +30,22 @@ router.get('/',  (req, res) => {
 
 res.render('dashboard');
 });
-
+router.get("/login", (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect("/");
+      return;
+    }
+  
+    res.render("login");
+  });
+  
+  router.get("/signup", (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect("/");
+      return;
+    }
+  
+    res.render("signup");
+  });
 
 module.exports = router;
