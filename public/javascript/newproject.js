@@ -18,16 +18,31 @@ const newFormHandler = async function(event) {
         authorization: `Bearer ${token}`
       }
     }); 
-    await fetch(`/api/users`, {
+    var displayUsers = function(language) {
+      var apiUrl = "/api/users" + language;
+      fetch(apiUrl).then(function(response) {
+        if (response.ok) {
+          response.json().then(function(data) {
+            displayUsers(data.username, language);
+          });
+        } else {
+          alert("Error: " + response.statusText);
+        }
+      });
+    };
+    function getUsers() {
+      fetch(`/api/users`, )
+    }
+    // await fetch(`/api/users`, {
         
-        method: "GET",
-        body: JSON.stringify({
-            username
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
-    })
-    $('input-group-prepend').append('<option>' + data[0].abc  + '</option>');
+    //     method: "GET",
+    //     body: JSON.stringify({
+    //         username
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => console.log(data))
+    // })
+    // $('input-group-prepend').append('<option>' + data[0].abc  + '</option>');
   
     document.location.replace("/myprojects");
  
