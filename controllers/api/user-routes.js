@@ -45,15 +45,15 @@ router.post('/', (req, res) => {
     .then(dbUserData => {
         // session data goes here
         req.session.save(() => {
-        req.session.userId = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-      
-        res.json(dbUserData);
-    });
-})
+            req.session.userId = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+        
+            res.json(dbUserData);
+        });
+    })
     .catch(err => {
-        console(err);
+        console.log(err);
         res.status(500).json(err);
     });
 });

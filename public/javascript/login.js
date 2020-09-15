@@ -15,12 +15,12 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
-            console.log("testing");
-            //document.location.replace('/');
+            console.log("success");
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
     }
 }
 
-document.querySelector('#login_btn').addEventListener('submit', loginFormHandler);
+document.querySelector('#login_form').addEventListener('submit', loginFormHandler);
