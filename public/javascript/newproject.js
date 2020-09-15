@@ -3,7 +3,7 @@ const newFormHandler = async function(event) {
   
     const title = document.querySelector('input[name="project-title"]').value;
     const project_text = document.querySelector('textarea[name="project-text"]').value;
-    const users_with_access = document.querySelector('option[name="project-users"]').value;
+    const users_with_access = document.querySelector('option[name="assignee"]').value;
   
     const token = localStorage.getItem("token");
     await fetch(`/api/projects`, {
@@ -18,35 +18,24 @@ const newFormHandler = async function(event) {
         authorization: `Bearer ${token}`
       }
     }); 
-    var displayUsers = function(language) {
-      var apiUrl = "/api/users" + language;
-      fetch(apiUrl).then(function(response) {
-        if (response.ok) {
-          response.json().then(function(data) {
-            displayUsers(data.username, language);
-          });
-        } else {
-          alert("Error: " + response.statusText);
-        }
-      });
-    };
     function getUsers() {
-      fetch(`/api/users`, )
+      fetch(`/api/users`)
+      .then(response => {
+        var select = document.createElement("select") 
+        response.data.forEach(item => {
+           var option = document.createElement("option")
+           option.value = item;
+           option.textContent = item;
+           select.appendChild(item)
+        })
+        document.querySelector("body").appendChild(select)
+      })
     }
-    // await fetch(`/api/users`, {
-        
-    //     method: "GET",
-    //     body: JSON.stringify({
-    //         username
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => console.log(data))
-    // })
-    // $('input-group-prepend').append('<option>' + data[0].abc  + '</option>');
-  
+    
     document.location.replace("/myprojects");
- 
+    getUsers()
 };
   document
     .querySelector("#new-project-form")
     .addEventListener("submit-project", newFormHandler);
+   
