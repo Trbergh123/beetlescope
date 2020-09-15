@@ -39,7 +39,7 @@
                   <label for="assignee">Assignee</label> 
                   <select class ="form-control" id="select-user">
                   {{#each User}}
-                      <option>{{users_with_access.username}}</option>
+                      <option name="select-user">{{User.username}}</option>
                    {{/each}}
                       </select>
                       
