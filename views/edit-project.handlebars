@@ -1,9 +1,9 @@
-  <!-- Begin Page Content -->
+        <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Create Task</h1>
+            <h1 class="h3 mb-0 text-gray-800">Edit Project</h1>
 
           </div>
 
@@ -15,36 +15,39 @@
           <div class="row align-items-center justify-content-center">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="project-title">Name of task</span>
+                <span class="input-group-text" id="inputGroup-sizing-default">Name of project</span>
               </div>
               <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             <div>
-              <form id="new-project-form">
+              <form class="edit-project-form">
                 <div class="form-row">
                   <div class="form-group col-12">
                     <label for="exampleFormControlTextarea1">Description</label>
-                    <textarea class="form-control" id="project-text" rows="3"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                   </div>
                   <div class="form-group col-4">
-                    <label for="exampleFormControlSelect1">Assign Users</label>
-                    <select class="form-control" id="select-user">
-                      <option id="project-users">High</option>
-                      <option id="project-users">Normal</option>
-                      <option id="project-users">Low</option>
+                    <label for="exampleFormControlSelect1">Priority</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>High</option>
+                      <option>Normal</option>
+                      <option>Low</option>
                     </select>
                 </div>
                 
                 <div class="form-group col-4">
-                  <label for="inputAddress">Assigne</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="assigne">
+                  <label for="assignee">Assignee</label>
+                  <select class ="form-control" id="select-user">
+                      {{#each users}}
+                      <option>{{User.username}}</option>
+                      {{/each}}
                 </div>
                 <div class="form-group col-4">
                   <label for="inputAddress2">Date</label>
                   <input type="text" class="form-control" id="" placeholder="Due Date">
                 </div>
 
-                <button type="submit-project" class="button btn-info">
+                <button type="button" class="button btn-info">
                 Add
             </button>
               </form>
@@ -65,3 +68,4 @@
 
       </div>
       <!-- End of Main Content -->
+      <script src="/javascript/newproject.js"></script>

@@ -17,8 +17,17 @@ const newFormHandler = async function(event) {
         "Content-Type": "application/json",
         authorization: `Bearer ${token}`
       }
-    });
-    
+    }); 
+    await fetch(`/api/users`, {
+        
+        method: "GET",
+        body: JSON.stringify({
+            username
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+    })
+    $('input-group-prepend').append('<option>' + data[0].abc  + '</option>');
   
     document.location.replace("/myprojects");
  

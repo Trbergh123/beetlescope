@@ -17,13 +17,18 @@
                 <div class="h5 mb-0 font-weight-bold text-gray-800">Click to create a project</div>
               </div>
               <div class="row col-12">
+                
                   Current Projects
               </div>
+              {{#each projects as |title| }} on {{ format_date createdAt }}
               <div class="container p-3 my-3 bg-dark text-white justify-content-between col-12">
                   Where current projects go
-                  <div class="mt-4"><span id="">Example Project</span>   <a class="btn btn-primary mr-2" href="projectExample.html" role="button">Details</a><a class="btn btn-primary" href="#" role="button">Manage Users</a> </div>
+                  <div class="project-list mt-4"><span id="">Example Project</span>   
+                  <a class="btn btn-primary mr-2" href="/projectdetails" role="button">Details</a>
+                  <a class="btn btn-primary" href="/edit-project" role="button">Manage Users</a>
+                   </div>
                 </div>
-
+              {{/each}}
           </div>
 
 
