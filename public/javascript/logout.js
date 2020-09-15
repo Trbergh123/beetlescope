@@ -1,10 +1,10 @@
 function logout() {
-    fetch("/api/user/logout", {
+    fetch("/api/users/logout", {
         method: "post",
         headers: { "Content-Type": "application/json" }
     })
     .then(function() {
-        document.location.replace("/");
+        document.location.replace("/login");
     })
     .catch(err => console.log(err));
 }
