@@ -7,11 +7,15 @@ router.get('/api/users', (req, res) => {
         attributes: ['username']
         
     })
-    .then(dbUserData => res.json(dbUserData))
+    .then(dbUserData => {
+        const users = dbUserData.map(user.get)
+        res.json('newproject', { users })
+    })
+     
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
-    });
+        })
 });
 
 router.get('/', (req, res) => {

@@ -37,9 +37,9 @@
                 
                 <div class="form-group col-4">
                   <label for="assignee">Assignee</label> 
-                  <select class ="form-control" id="select-user">
-                  {{#each User}}
-                      <option name="select-user">{{User.username}}</option>
+                  <select class ="form-control dropdown" id="select-user">
+                  {{#each users as |user|}}
+                      <option name="select-user">{{users.username}}</option>
                    {{/each}}
                       </select>
                       
@@ -60,6 +60,7 @@
 
           </div>
         </div>
+<div class="dropdown">
 
 
           
