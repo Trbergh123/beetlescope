@@ -22,6 +22,7 @@ const newFormHandler = async function(event) {
       fetch(`/api/users`)
       .then(response => {
         var select = document.createElement("select") 
+        console.log(respone);
         response.data.forEach(item => {
            var option = document.createElement("option")
            option.value = item;

@@ -37,9 +37,9 @@
                 
                 <div class="form-group col-4">
                   <label for="assignee">Assignee</label> 
-                  <select class ="form-control dropdown" id="select-user">
-                  {{#each users as |user|}}
-                      <option name="select-user">{{users.username}}</option>
+                  <select class ="form-control dropdown"  id="select-user">
+                  {{#each users}}
+                      <option >{{username}}</option>
                    {{/each}}
                       </select>
                       
@@ -50,7 +50,7 @@
                   <input type="text" class="form-control" id="" placeholder="Due Date">
                 </div>
 
-                <button type="button" class="button btn-info">
+                <button type="button" class="submit-project btn-info">
                   Add
                 </button>
               </form>
