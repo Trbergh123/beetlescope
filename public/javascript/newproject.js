@@ -11,7 +11,8 @@ const newFormHandler = async function(event) {
       body: JSON.stringify({
         title,
         project_text,
-        users_with_access
+        users_with_access,
+        format_date
       }),
       headers: {
         "Content-Type": "application/json",

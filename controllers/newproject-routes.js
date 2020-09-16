@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
     
 })
 
-router.put('/', (req, res) => {
+router.post('/', (req, res) => {
     Project.create({
         title: req.body.title,
         project_text: req.body.project_text,
@@ -29,10 +29,8 @@ router.put('/', (req, res) => {
 
     })
     .then(dbProjectData => res.json(dbProjectData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    const newProject = dbProjectData.map(newProject=>newProject.post({plain:true}))
+    res.render('myprojects', {newProject:newProject} )
 });
 
 

@@ -4,7 +4,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Create Project</h1>
-            <button type="button" class="button btn-info">
+            <button type="submit" id="submit-project" class="submit-project btn-info">
                   Add
                 </button>
 
@@ -42,7 +42,7 @@
                   <label for="assignee">Assignee</label>
                   <select class ="form-control" id="select-user">
                       {{#each users}}
-                      <option>{{User.username}}</option>
+                      <option>{{username}}</option>
                       {{/each}}
                 </div>
                

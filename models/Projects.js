@@ -29,10 +29,11 @@ Project.init(
             }
         },
         users_with_access: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
+            allowNull:false,
             references: {
                 model: 'user',
-                key: 'id'
+                key: 'username'
             }
         }
     },
