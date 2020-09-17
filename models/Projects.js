@@ -20,11 +20,11 @@ Project.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-       priority: {
-            type: DataTypes.STRING,
-            allowNull: false,
+       //priority: {
+           // type: DataTypes.STRING,
+           // allowNull: false,
             
-        },
+       // },
         users_with_access: {
             type: DataTypes.STRING,
             allowNull:false,

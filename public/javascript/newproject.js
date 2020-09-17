@@ -15,7 +15,7 @@ const newFormHandler = async function(event) {
   
         title,
         project_text,
-        priority,
+        //priority,
         users_with_access
       }),
       headers: {
