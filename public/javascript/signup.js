@@ -3,11 +3,11 @@ async function signupFormHandler(event) {
     
     const first_name = document.querySelector('#first_name').value.trim();
     const last_name = document.querySelector('#last_name').value.trim();
-    const username = first_name + " " + last_name;
+    const username = first_name + last_name;
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
     const repeat_password = document.querySelector('#repeat-password-signup').value.trim();
-    const user_role = "user";
+    const user_role = "admin";
 
     if (password === repeat_password){
         if (username && email && password) {
