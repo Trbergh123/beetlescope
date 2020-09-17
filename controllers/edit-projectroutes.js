@@ -11,7 +11,7 @@ router.get("/projects", authUser, (req, res) => {
       .then(dbPostData => {
         const projects = dbPostData.map((project) => project.get({ plain: true }));
         
-        res.render("/edit-project", {
+        res.render("all-posts-admin", {
           layout: "dashboard",
           projects
         });
