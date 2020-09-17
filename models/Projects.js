@@ -8,7 +8,7 @@ Project.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             primaryKey: true,
             autoIncrement: true
         },
@@ -20,13 +20,10 @@ Project.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        user_id: {
-            type: DataTypes.INTEGER,
+       priority: {
+            type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
+            
         },
         users_with_access: {
             type: DataTypes.STRING,

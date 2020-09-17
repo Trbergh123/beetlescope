@@ -3,13 +3,20 @@ const newFormHandler = async function(event) {
   
     const title = document.querySelector('#project_title').value;
     const project_text = document.querySelector('#project_text').value;
-
+    const priority = document.querySelector('option').value;
+    const users_with_access = document.querySelector('#select-user').value;
+   
+    
     const token = localStorage.getItem("token");
     await fetch(`/api/projects`, {
+     
       method: "POST",
       body: JSON.stringify({
+  
         title,
         project_text,
+        priority,
+        users_with_access
       }),
       headers: {
         "Content-Type": "application/json",
