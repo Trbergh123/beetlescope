@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
     Project.create({
         title: req.body.title,
         project_text: req.body.project_text,
-        priority: req.body.priority,
+        user_id: req.params.user_id,
         users_with_access: req.body.users_with_access
         
 
