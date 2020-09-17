@@ -3,18 +3,22 @@ const sequelize = require('../config/connection');
 const { User, Project } = require('../models');
 const {authUser, authRole } = require('../utils/auth');
 //get all users
-router.get('/', (req, res) => {
-//     User.findAll({
-//         attributes: { exclude: ['password'] }
-//     })
-//     .then(dbUserData => res.json(dbUserData))
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// });
-res.render('admin');
+router.get('/api/users', (req, res) => {
+   
 });
+
+router.get('/', (req, res) => {
+    User.findAll({
+        attributes: ['username']
+    })
+    .then(dbUserData => {
+       // const users = dbUserData.map(users)
+       const users = dbUserData.map(user=>user.get({plain:true}))
+        // dbuserdata -> [{username: "Brandon"}, {username: "sam"}]
+        res.render('admin', {users: users})
+    })
+    
+})
 //get user by id ---should also be logged in
 // router.get('/:id', authUser, (req, res) => {
 //     User.findOne({
