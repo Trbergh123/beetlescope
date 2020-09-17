@@ -1,13 +1,10 @@
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+            <!-- Begin Page Content -->
+        <div  class="container-fluid">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Create Project</h1>
-            <button type="button" class="button btn-info">
-                  Add
-                </button>
-
+            
           </div>
 
           <!-- Content Row -->
@@ -23,7 +20,10 @@
               <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
             </div>
             <div>
-              <form>
+              <form id="new-project-form">
+                 <button type="submit" id="submit-project" class="btn btn-info" formaction="myprojects">
+                  Add
+                </button>
                 <div class="form-row">
                   <div class="form-group col-12">
                     <label for="exampleFormControlTextarea1">Description</label>
@@ -42,10 +42,14 @@
                   <label for="assignee">Assignee</label>
                   <select class ="form-control" id="select-user">
                       {{#each users}}
-                      <option>{{User.username}}</option>
+                      <option>{{username}}</option>
+
                       {{/each}}
+
+                      
                 </div>
                
+                   
 
                 
               </form>
@@ -66,9 +70,10 @@
         <!-- /.container-fluid -->
 
       </div>
-      <!-- End of Main Content -->
       <script src="/javascript/newproject.js"></script>
+      <!-- 
+     
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="javascript/signup.js"></script>
+    <script src="javascript/signup.js"></script>End of Main Content -->
