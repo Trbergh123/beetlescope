@@ -17,7 +17,7 @@ const editFormHandler = async function(event) {
     }
   });
 
-  document.location.replace('/myprojects');
+  document.location.replace('/edit-project');
 };
 await fetch(`/api/users`, {
         
