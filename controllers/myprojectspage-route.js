@@ -9,7 +9,9 @@ router.get('/', (req, res) => {
         attributes: [
             'title',
             'project_text',
-            'users_with_access',
+            'priority',
+            'status',
+            'user_id',
             'created_at'
         ]
     })

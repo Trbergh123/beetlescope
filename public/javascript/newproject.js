@@ -3,6 +3,10 @@ const newFormHandler = async function(event) {
   
     const title = document.querySelector('#project_title').value;
     const project_text = document.querySelector('#project_text').value;
+    const priority = document.querySelector('#priority_options').value;
+    const status = "In progress";
+
+    // status default is "In progress" because it is not available on the form yet
 
     const token = localStorage.getItem("token");
     await fetch(`/api/projects`, {
@@ -10,6 +14,8 @@ const newFormHandler = async function(event) {
       body: JSON.stringify({
         title,
         project_text,
+        priority,
+        status,
       }),
       headers: {
         "Content-Type": "application/json",
