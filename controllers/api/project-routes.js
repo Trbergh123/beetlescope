@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
             'title',
             'project_text',
             'priority',
+            'status',
             'user_id',
             'created_at'
         ],
@@ -35,6 +36,7 @@ router.get('/:id', (req, res) => {
             'title',
             'project_text',
             'priority',
+            'status',
             'user_id',
             'create_at'
         ],
@@ -72,6 +74,7 @@ router.post('/', (req, res) => {
             title: req.body.title,
             project_text: req.body.project_text,
             priority: req.body.priority,
+            status: req.body.status,
             user_id: req.body.user_id
         })
         
