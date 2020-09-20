@@ -17,8 +17,8 @@ router.use('/mytasks', mytaskRoutes);
 router.use('/newtask', newtaskRoutes);
 router.use('/edit-project',editprojectRoutes);
 
-// router.use((req, res) => {
-//     res.status(404).end();
-// });
+router.use((req, res) => {
+    res.status(404).end();
+});
 
 module.exports = router;

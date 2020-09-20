@@ -4,6 +4,7 @@ const Task = require('./Tasks');
 const Comment = require('./Comments')
 
 // module associations
+
 User.hasMany(Project, {
     foreignKey: 'user_id'
 });

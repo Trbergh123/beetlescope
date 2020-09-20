@@ -11,10 +11,10 @@ router.get('/', (req, res) => {
         attributes: ['username']
     })
     .then(dbUserData => {
-       // const users = dbUserData.map(users)
-       const users = dbUserData.map(user=>user.get({plain:true}))
+        // const users = dbUserData.map(users)
+        const users = dbUserData.map(user=>user.get({plain:true}))
         // dbuserdata -> [{username: "Brandon"}, {username: "sam"}]
-        res.render('newproject', {users: users})
+        res.render('newproject', {users: users});
     })
     
 })
@@ -23,10 +23,9 @@ router.post('/', (req, res) => {
     Project.create({
         title: req.body.title,
         project_text: req.body.project_text,
-        user_id: req.params.user_id,
-        users_with_access: req.body.users_with_access
-        
-
+        priority: req.body.priority,
+        status: req.body.status,
+        user_id: req.session.user_id
     })
     .then(dbProjectData => res.json(dbProjectData))
     const newProject = dbProjectData.map(newProject=>newProject.post({plain:true}))
