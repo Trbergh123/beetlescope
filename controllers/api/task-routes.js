@@ -7,6 +7,8 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'type',
+            'priority',
+            'status',
             'project_id',
             'user_id'
         ],
@@ -34,6 +36,8 @@ router.get('/:id', (req, res) => {
             'id',
             'title',
             'type',
+            'priority',
+            'status',
             'project_id',
             'user_id'
         ],
@@ -68,6 +72,8 @@ router.post('/', (req, res) => {
     Task.create({
         title: req.body.title,
         type: req.body.type,
+        priority: req.body.priority,
+        status: req.body.status,
         project_id: req.body.project_id,
         user_id: req.body.user_id
     })
