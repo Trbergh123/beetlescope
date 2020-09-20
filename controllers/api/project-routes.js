@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'project_text',
-            'user_id',
+            'priority',
             'users_with_access',
             'created_at'
         ],
@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
             'id',
             'title',
             'project_text',
-            'user_id',
+            'priority',
             'users_with_access',
             'create_at'
         ],
@@ -67,17 +67,20 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    Project.create({
-        title: req.body.title,
-        project_text: req.body.project_text,
-        user_id: req.body.user_id,
-        users_with_access: req.body.users_with_access
-    })
-    .then(dbProjectData => res.json(dbProjectData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    if(req.session) {
+        Project.create({
+            title: req.body.title,
+            project_text: req.body.project_text,
+            priority: req.body.priority,
+            users_with_access: req.body.users_with_access
+        })
+        
+        .then(dbProjectData => res.json(dbProjectData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+    }
 });
 
 router.put('/:id', (req, res) => {

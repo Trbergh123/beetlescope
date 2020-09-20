@@ -20,22 +20,19 @@ Project.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        user_id: {
+        priority: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-        },
+            allowNull: false
+        }
+        /*,
         users_with_access: {
             type: DataTypes.STRING,
-            allowNull:false,
             references: {
                 model: 'user',
                 key: 'username'
             }
         }
+        */
     },
     {
         sequelize,

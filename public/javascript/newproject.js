@@ -15,12 +15,13 @@ const newFormHandler = async function(event) {
         "Content-Type": "application/json",
         authorization: `Bearer ${token}`
       }
-    }); 
+    });
+    /*
     function getUsers() {
       fetch(`/api/users`)
       .then(response => {
         var select = document.createElement("select") 
-        console.log(respone);
+        console.log(response);
         response.data.forEach(item => {
            var option = document.createElement("option")
            option.value = item;
@@ -30,9 +31,10 @@ const newFormHandler = async function(event) {
         document.querySelector("body").appendChild(select)
       })
     }
+    */
     
-    document.location.replace("/myprojects");
-    getUsers()
+    //document.location.replace("/myprojects");
+    //getUsers()
 };
   document
     .querySelector("#new-project-form")

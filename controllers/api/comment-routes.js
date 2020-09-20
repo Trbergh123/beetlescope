@@ -7,7 +7,8 @@ router.get('./', (req, res) => {
             'id',
             'comment_text',
             'created_at'
-        ],
+        ]
+        /*,
         include: [
             {
                 include: User,
@@ -18,6 +19,7 @@ router.get('./', (req, res) => {
                 attributes: ['title']
             }
         ]
+        */
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
@@ -32,9 +34,8 @@ router.post('/', (req, res) => {
         Comment.create({
             comment_text: req.body.comment_text,
             post_id: req.body.post_id,
-            user_id: req.body.user_id
             // use the id from the session
-            //user_id: req.session.user_id
+            user_id: req.session.user_id
         })
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {
