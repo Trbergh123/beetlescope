@@ -21,18 +21,16 @@ Project.init(
             allowNull: false,
         },
         priority: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        }
-        /*,
-        users_with_access: {
             type: DataTypes.STRING,
+            allowNull: false
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'username'
+                key: 'id'
             }
         }
-        */
     },
     {
         sequelize,

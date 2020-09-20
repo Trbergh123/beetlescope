@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
             'title',
             'project_text',
             'priority',
-            'users_with_access',
+            'user_id',
             'created_at'
         ],
         include: [
@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
             'title',
             'project_text',
             'priority',
-            'users_with_access',
+            'user_id',
             'create_at'
         ],
         include: [
@@ -72,7 +72,7 @@ router.post('/', (req, res) => {
             title: req.body.title,
             project_text: req.body.project_text,
             priority: req.body.priority,
-            users_with_access: req.body.users_with_access
+            user_id: req.body.user_id
         })
         
         .then(dbProjectData => res.json(dbProjectData))

@@ -7,8 +7,7 @@ router.get('./', (req, res) => {
             'id',
             'comment_text',
             'created_at'
-        ]
-        /*,
+        ],
         include: [
             {
                 include: User,
@@ -19,7 +18,6 @@ router.get('./', (req, res) => {
                 attributes: ['title']
             }
         ]
-        */
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {

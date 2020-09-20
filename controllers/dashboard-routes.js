@@ -28,8 +28,9 @@ router.get('/',  (req, res) => {
 //     });
 // });
 
-res.render('dashboard');
+    res.render('dashboard');
 });
+
 router.get("/login", (req, res) => {
     if (req.session.loggedIn) {
         res.redirect("/");

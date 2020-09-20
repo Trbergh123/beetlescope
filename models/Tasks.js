@@ -19,14 +19,14 @@ Task.init(
         type: {
             type: DataTypes.STRING,
             allowNull: false
-        }/*,
+        },
         project_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'project',
                 key: 'id'
             }
-        }*/,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
