@@ -27,11 +27,6 @@ const { authUser } = require('../utils/auth');
 //         res.status(500).json(err);
 //     });
 // });
-<<<<<<< HEAD
-
-    res.render('dashboard');
-});
-=======
 router.get('/',  (req, res) => {
 res.render('dashboard');
 });
@@ -51,7 +46,6 @@ res.render('dashboard');
 //     })
     
 // })
->>>>>>> 7115f1addc7dd4fcf8bddd97f47d417848c44542
 
 router.get("/login", (req, res) => {
     if (req.session.loggedIn) {
