@@ -4,47 +4,64 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Create Task</h1>
-            <button type="button" class="button btn-info">
-                  Add
-                </button>
+           
           </div>
 
           <!-- Content Row -->
           
           </div>
-          
+          <form id="new-task-form">
           <div class="container mt-5">
           <div class="row align-items-center justify-content-center">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="project-title">Name of task</span>
+                <span class="input-group-text" id="tasks-title">Name of task</span>
               </div>
-              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="title">
             </div>
             <div>
-              <form id="new-project-form">
+              
                 <div class="form-row">
                   <div class="form-group col-12">
                     <label for="exampleFormControlTextarea1">Description</label>
-                    <textarea class="form-control" id="project-text" rows="3"></textarea>
-                  </div>
-                  <div class="form-group col-4">
-                    <label for="exampleFormControlSelect1">Assign Users</label>
-                    <select class="form-control" id="select-user">
-                      <option id="project-users">High</option>
-                      <option id="project-users">Normal</option>
-                      <option id="project-users">Low</option>
+                    <textarea class="form-control" id="tasks-text" rows="3"></textarea>
+                  </div> <button type="submit" class="button btn-info" id="submit">
+                  Add
+                </button>
+                  <div class="form-group col-12">
+                  <label for="assignee">Assignee</label>
+                  <select class ="form-control" id="select-user">
+                      {{#each users}}
+                      <option>{{username}}</option>
+
+                      {{/each}}
+                  </select>
+                      <div class="form-group col-12">
+                  <Label for="type">Type</Label>
+                  <select class ="form-control" id="tasks-type">
+                     
+                      <option>Bug</option>
+                      <option>Feature</option>
+                      </select>
+                  
+                </div>
+                <div class="form-group col-6">
+                    <label for="priority_options">Priority</label>
+                    <select class="form-control" id="priority_options">
+                      <option>High</option>
+                      <option>Normal</option>
+                      <option>Low</option>
                     </select>
                 </div>
+                    </div>
+                   
+                    
+                  
+
+                    
                 
-                <div class="form-group col-4">
-                  <label for="inputAddress">Assigne</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="assigne">
-                </div>
-                <div class="form-group col-4">
-                  <label for="inputAddress2">Date</label>
-                  <input type="text" class="form-control" id="" placeholder="Due Date">
-                </div>
+                
+                
 
                 
               </form>

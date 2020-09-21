@@ -18,11 +18,14 @@
               <div class="row col-12">
                   Current Tasks
               </div>
+              
               <div class="container p-3 my-3 bg-dark text-white justify-content-between col-12">
                   Where current tasks go
-                  <div class="mt-4"><span id="">Example Task</span>   <a class="btn btn-primary mr-2" href="projectExample.html" role="button">Details</a><a class="btn btn-primary" href="#" role="button">Manage Users</a> </div>
+                  {{#each}}
+                  <div class="mt-4"><span id="">{{title}}</span>   <a class="btn btn-primary mr-2" href="projectExample.html" role="button">Details</a><a class="btn btn-primary" href="#" role="button">Manage Users</a> </div>
+                  {{/each}}
                 </div>
-
+                
           </div>
 
 

@@ -1,10 +1,13 @@
 const newFormHandler = async function(event) {
     event.preventDefault();
   
-    const title = document.querySelector('#tasks_title').value;
-    const type = document.querySelector('#tasks_type').value;
+    const title = document.querySelector('#tasks-title').value;
+    const type = document.querySelector('#tasks-type').value;
     const project_id = document.querySelector('project_id').value;
     const users_with_access = document.querySelector('#select-user').value;
+    const task_text = document.querySelector('#task-text').value;
+    const priority = document.querySelector('#priority_options').value;
+    
    
     
     const token = localStorage.getItem("token");
@@ -15,6 +18,7 @@ const newFormHandler = async function(event) {
   
         title,
         type,
+        task_text,
         project_id,
         priority,
         users_with_access
@@ -43,5 +47,5 @@ const newFormHandler = async function(event) {
     getUsers()
 };
   document
-    .querySelector("#new_tasks")
+    .querySelector("#new-tasks-form")
     .addEventListener("submit", newFormHandler);
