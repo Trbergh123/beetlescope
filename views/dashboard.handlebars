@@ -67,8 +67,8 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Recent Changes</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
             </div>
             <div class="col-auto">
               <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -91,28 +91,67 @@
         <!-- Card Header - Accordion -->
         <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button"
           aria-expanded="true" aria-controls="collapseCardExample">
-          <h6 class="m-0 font-weight-bold text-primary">Place Holder for Projects</h6>
+          <h6 class="m-0 font-weight-bold text-primary">Current Project progress</h6>
         </a>
         <!-- Card Content - Collapse -->
         <div class="collapse show" id="collapseCardExample">
           <div class="card-body">
             <ul>
-              <li>
-                Projects Example
+              {{#each projects}}
+              <li class="mt-3">
+                {{title}}
                 <div class="progress">
-                  <div class="progress-bar" id="p1" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
-                    style="width:20%">
+                  <div id="myBar" class="progress-bar"  role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                    aria-valuemax="100" style="width:20%">
                     To do
                   </div>
                 </div>
-                <a class="btn btn-info mt-5" onclick="move()" role="button">Update</a>
+                <a class="btn btn-primary mt-2 text-white" onclick="move()" role="button">In progress</a>
+                <a class="btn btn-primary mt-2 text-white" onclick="move2()" role="button">Completed</a>
+                <script>
+                  function move() {
+                    var elem = document.getElementById("myBar");
+                    var width = 20;
+                    var id = setInterval(frame, 10);
+                    var del = document.getElementById("myBar").innerHTML='';
+                    var insert = document.getElementById("myBar").innerHTML='In progress';
+                    function frame() {
+                      if (width >= 50) {
+                        clearInterval(id);
+                      } else {
+                        width++;
+                        elem.style.width = width + '%';
+                        document.getElementById("demo").innerHTML = width * 1 + '%';
+                      }
+                    }
+                  }
+                </script>
+                <script>
+                  function move2() {
+                    var elem = document.getElementById("myBar");
+                    var width = 20;
+                    var id = setInterval(frame, 10);
+                    var del = document.getElementById("myBar").innerHTML='';
+                    var insert = document.getElementById("myBar").innerHTML='Completed';
+                    function frame() {
+                      if (width >= 100) {
+                        clearInterval(id);
+                      } else {
+                        width++;
+                        elem.style.width = width + '%';
+                        document.getElementById("demo").innerHTML = width * 1 + '%';
+                      }
+                    }
+                  }
+                </script>
               </li>
-              
+              {{/each}}
+              <script>
 
-              <li>
-                Projects Exmaple 2
+              </script>
 
-              </li>
+
+
             </ul>
 
 
@@ -121,47 +160,25 @@
       </div>
     </div>
 
-    <!-- Pie Chart -->
-    <div class="col-xl-6 col-lg-5">
-      <div class="card shadow mb-4">
-        <!-- Card Header - Accordion -->
-        <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button"
-          aria-expanded="true" aria-controls="collapseCardExample">
-          <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
-        </a>
-        <!-- Card Content - Collapse -->
-        <div class="collapse show" id="collapseCardExample">
-          <div class="card-body">
-            <ul>
-              <li>
-                Projects Example
-              </li>
-              <li>
-                Projects Exmaple 2
 
-              </li>
-            </ul>
-
-
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 
   </div>
   <!-- /.container-fluid -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
 </div>
 <!-- End of Main Content -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <!-- =
   <script src="javascript/signup.js"></script>
   -->
- <script src="/js/sb-admin-2.min.js"></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  class="Secondary" lang="en">
 
 <head>
 
@@ -55,19 +55,19 @@
 
       <li class="nav-item active">
         <a class="nav-link" href="/admin">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-users-cog"></i>
           <span>Admin Page</span></a>
       </li>
 
       <li class="nav-item active">
         <a class="nav-link" href="/myprojects">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-project-diagram"></i>
           <span>My Projects</span></a>
       </li>
 
       <li class="nav-item active">
         <a class="nav-link" href="/mytasks">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-tasks"></i>
           <span>My Tasks</span></a>
       </li>
 
@@ -79,7 +79,7 @@
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        <button class="rounded-circle border-0  text-white" id="sidebarToggle"></button>
       </div>
       
 
@@ -96,8 +96,8 @@
         <nav class="navbar navbar-expand navbar-light bg-dark topbar mb-4 static-top shadow  justify-content-end">
 
           <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3 ">
+            <i class="fa fa-bars text-white mt-1 ml-4"></i>
           </button>
 
 
@@ -108,16 +108,11 @@
           <!-- Nav Item - Messages -->
 
           <!-- Nav Item - User Information -->
-          <li class="nav-item dropdown no-arrow">
+          <li id="UserDrop" class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              <span class="mr-2 d-none d-lg-inline text-primary small">Current User</span>
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-square" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                  d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                <path fill-rule="evenodd" d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-              </svg>
+              <span class="mr-2 mb-4 d-none d-lg-inline text-white small">User Actions</span>
+              <i class="far fa-user-circle mb-4 text-white"></i>
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -159,7 +154,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <!--
+    
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -178,7 +173,10 @@
         </div>
       </div>
     </div>
-    -->
+  <style>
+    a { color:inherit; }
+    .dropdown-menu {background-color: rgb(106, 108, 117);}
+  </style>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

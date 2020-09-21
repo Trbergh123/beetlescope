@@ -4,7 +4,7 @@ const { User, Project, Issue, Comment } = require('../models');
 const { authUser } = require('../utils/auth');
 
 ///
-router.get('/',  (req, res) => {
+//router.get('/',  (req, res) => {
 //     console.log(req.session);
 //     console.log('==============');
 //     Project.findAll({
@@ -20,16 +20,38 @@ router.get('/',  (req, res) => {
 //             'created_at'
 //         ]
 
-//     })
+    
 //     .then(dbUserData => res.json(dbUserData))
 //     .catch(err => {
 //         console.log(err);
 //         res.status(500).json(err);
 //     });
 // });
+<<<<<<< HEAD
 
     res.render('dashboard');
 });
+=======
+router.get('/',  (req, res) => {
+res.render('dashboard');
+});
+// router.get('/', (req, res) => {
+//     Project.findAll({
+        
+//         attributes: [
+//             'title',
+//             'project_text',
+//             'users_with_access',
+//             'created_at'
+//         ]
+//     })
+//     .then(dbProjectData => {
+//         const projects = dbProjectData.map((projects) => projects.get({plain: true}));
+//         res.render('dashboard', {projects:projects})
+//     })
+    
+// })
+>>>>>>> 7115f1addc7dd4fcf8bddd97f47d417848c44542
 
 router.get("/login", (req, res) => {
     if (req.session.loggedIn) {

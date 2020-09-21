@@ -10,8 +10,10 @@ const newFormHandler = async function(event) {
 
     const token = localStorage.getItem("token");
     await fetch(`/api/projects`, {
+     
       method: "POST",
       body: JSON.stringify({
+  
         title,
         project_text,
         priority,
@@ -22,25 +24,25 @@ const newFormHandler = async function(event) {
         authorization: `Bearer ${token}`
       }
     });
-    /*
-    function getUsers() {
-      fetch(`/api/users`)
-      .then(response => {
-        var select = document.createElement("select") 
-        console.log(response);
-        response.data.forEach(item => {
-           var option = document.createElement("option")
-           option.value = item;
-           option.textContent = item;
-           select.appendChild(item)
-        })
-        document.querySelector("body").appendChild(select)
-      })
-    }
-    */
     
-    //document.location.replace("/myprojects");
-    //getUsers()
+    // function getUsers() {
+    //   fetch(`/api/users`)
+    //   .then(response => {
+    //     var select = document.createElement("select") 
+    //     console.log(response);
+    //     response.data.forEach(item => {
+    //        var option = document.createElement("option")
+    //        option.value = item;
+    //        option.textContent = item;
+    //        select.appendChild(item)
+    //     })
+    //     document.querySelector("body").appendChild(select)
+    //   })
+    // }
+    
+    
+    document.location.replace("/myprojects");
+    // getUsers()
 };
   document
     .querySelector("#new-project-form")

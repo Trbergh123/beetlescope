@@ -6,7 +6,7 @@ const myprojectRoutes = require('./myprojectspage-route');
 const newprojectRoutes = require('./newproject-routes');
 const mytaskRoutes = require('./mytasks-routes');
 const newtaskRoutes = require('./newtask-routes');
-
+const editprojectRoutes = require('./edit-projectroutes');
 
 router.use('/', dashboardRoutes);
 router.use('/api', apiRoutes);
@@ -15,6 +15,7 @@ router.use('/myprojects', myprojectRoutes);
 router.use('/newproject', newprojectRoutes);
 router.use('/mytasks', mytaskRoutes);
 router.use('/newtask', newtaskRoutes);
+router.use('/edit-project',editprojectRoutes);
 
 router.use((req, res) => {
     res.status(404).end();
