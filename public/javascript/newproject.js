@@ -4,7 +4,7 @@ const newFormHandler = async function(event) {
     const title = document.querySelector('#project_title').value;
     const project_text = document.querySelector('#project_text').value;
     const priority = document.querySelector('#priority_options').value;
-    const status = "In progress";
+    const status = "to-do, in-progress, completed";
 
     // status default is "In progress" because it is not available on the form yet
 
