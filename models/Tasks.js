@@ -16,6 +16,10 @@ Task.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
+        text: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
         type: {
             type: DataTypes.STRING,
             allowNull: false
