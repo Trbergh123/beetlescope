@@ -13,9 +13,9 @@
       <h5 class ="m-0 font-weight-bold text-white text-center">Project title</h5>
     </div>
     <div class="card-body">
-      <div class="row">
-        <div class="col-6">Assignee(s): Username </div>
-        <div class="col-6">Details: this is where you can add some details about the project if you'd ever like to do such a thing.</div>
+      <div class="row" id="assignee-details">
+        <div class="col-6" id="assignees">Assignee(s): Username </div>
+        <div class="col-6" id="deets">Details: this is where you can add some details about the project if you'd ever like to do such a thing.</div>
       </div>
       <div class="row">
         <div class="col-3 mt-4" id="task-title">Task1</div>
@@ -24,9 +24,9 @@
             <span class="glyphicon glyphicon-cog"></span> 
               <span class=""></span>Status</button>
                 <ul class="dropdown-menu text-white">
-                   <li>To do</li>
-                    <li>In progress</li>
-                     <li>Completed</li>
+                   <li><input type="radio" id="to-do" name="status" value="to-do"/>To do</li>
+                    <li><input type="radio" id="in-progress" name="status" value="in-progress"/>In progress</li>
+                     <li><input type="radio" id="completed" name="status" value="completed"/>Completed</li>
                 </ul>
         </div>
         <div class="col-3 mt-4"  id="hide-options">
@@ -52,9 +52,9 @@
             <span class="glyphicon glyphicon-cog"></span> 
               <span class=""></span>Status</button>
                 <ul class="dropdown-menu text-white">
-                   <li>To do</li>
-                    <li>In progress</li>
-                     <li>Completed</li>
+                   <li><input type="radio" id="to-do" name="status" value="to-do"/>To do</li>
+                    <li><input type="radio" id="in-progress" name="status" value="in-progress"/>In progress</li>
+                     <li><input type="radio" id="completed" name="status" value="completed"/>Completed</li>
                 </ul>
         </div>
         <div class="col-3 mt-4">
@@ -80,9 +80,9 @@
             <span class="glyphicon glyphicon-cog"></span> 
               <span class=""></span>Status</button>
                 <ul class="dropdown-menu text-white">
-                   <li>To do</li>
-                    <li>In progress</li>
-                     <li>Completed</li>
+                   <li><input type="radio" id="to-do" name="status" value="to-do"/>To do</li>
+                    <li><input type="radio" id="in-progress" name="status" value="in-progress"/>In progress</li>
+                     <li><input type="radio" id="completed" name="status" value="completed"/>Completed</li>
                 </ul>
         </div>
         <div class="col-3 mt-4">
@@ -120,6 +120,18 @@
   justify-content: flex-end;
 }
 @media (max-width: 450px) { 
+  #assignee-details{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:space-around;
+  }
+  #assignees {
+    margin-bottom: 20px;
+  }
+  #deets {
+
+  }
 #hide-options{
   display:none;
 }
