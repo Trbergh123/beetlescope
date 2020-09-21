@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
             'priority',
             'status',
             'user_id',
-            'create_at'
+            'created_at'
         ],
         include: [
             {

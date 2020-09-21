@@ -13,7 +13,7 @@
   <!-- Content Row -->
   <div class="card shadow mb-4">
     <div class="card-header bg-dark py-3">
-      <h5 class ="m-0 font-weight-bold text-white text-center">Project title</h5>
+      <h5 class ="m-0 font-weight-bold text-white text-center" name="project-title">Project title</h5>
     </div>
     <div class="card-body">
       <div class="row" id="assignee-details">
@@ -21,8 +21,19 @@
         <div class="col-6" id="deets">Details: this is where you can add some details about the project if you'd ever like to do such a thing.</div>
       </div>
       <div class="row">
-        <div class="col-3 mt-4" id="task-title">Task1</div>
-        <div class="col-3 mt-4" id="hide-options">
+        <div class="col-2 mt-4" id="task-title">Task1</div>
+        <div class="col-2 mt-4" id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              <span class=""></span>Priority</button>
+                <ul class="dropdown-menu text-white">
+                   <li><input type="radio" id="low" name="priority" value="low"/>Low</li>
+                    <li><input type="radio" id="medium" name="priority" value="medium"/>Medium</li>
+                     <li><input type="radio" id="high" name="priority" value="high"/>High</li>
+                </ul>
+
+        </div>
+        <div class="col-2 mt-4" id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
               <span class=""></span>Status</button>
@@ -32,7 +43,7 @@
                      <li><input type="radio" id="completed" name="status" value="completed"/>Completed</li>
                 </ul>
         </div>
-        <div class="col-3 mt-4"  id="hide-options">
+        <div class="col-2 mt-4"  id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
               <span class=""></span>Assignee</button>
@@ -46,11 +57,22 @@
                        {{/each}}
                 </ul>
           </div>
-        <div class ="col-3 mt-4" id="button-row"><a class="btn btn-dark d-inline-flex" href="/" role="button"><i class="fas fa-info-circle"></i></a><a class="btn btn-dark ml-1 d-inline-flex" href="/" role="button"><i class="far fa-trash-alt"></i></a></div>
+        <div class ="col-4 mt-4" id="button-row"><a class="btn btn-dark d-inline-flex" href="/" role="button"><i class="fas fa-info-circle"></i></a><a class="btn btn-dark ml-1 d-inline-flex" href="/" role="button"><i class="far fa-trash-alt"></i></a></div>
       </div>
       <div class="row">
-        <div class="col-3 mt-4">Task2</div>
-        <div class="col-3 mt-4">
+        <div class="col-2 mt-4">Task2</div>
+        <div class="col-2 mt-4" id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              <span class=""></span>Priority</button>
+                <ul class="dropdown-menu text-white">
+                   <li><input type="radio" id="low" name="priority" value="low"/>Low</li>
+                    <li><input type="radio" id="medium" name="priority" value="medium"/>Medium</li>
+                     <li><input type="radio" id="high" name="priority" value="high"/>High</li>
+                </ul>
+
+        </div>
+        <div class="col-2 mt-4">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
               <span class=""></span>Status</button>
@@ -60,7 +82,7 @@
                      <li><input type="radio" id="completed" name="status" value="completed"/>Completed</li>
                 </ul>
         </div>
-        <div class="col-3 mt-4">
+        <div class="col-2 mt-4">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
               <span class=""></span>Assignee</button>
@@ -74,11 +96,22 @@
                        {{/each}}
                 </ul>
           </div>
-        <div class ="col-3 mt-4" id="button-row"><a class="btn btn-dark d-inline-flex" href="/" role="button"><i class="fas fa-info-circle"></i></a><a class="btn btn-dark ml-1 d-inline-flex" href="/" role="button"><i class="far fa-trash-alt"></i></a></div>
+        <div class ="col-4 mt-4" id="button-row"><a class="btn btn-dark d-inline-flex" href="/" role="button"><i class="fas fa-info-circle"></i></a><a class="btn btn-dark ml-1 d-inline-flex" href="/" role="button"><i class="far fa-trash-alt"></i></a></div>
       </div>
       <div class="row">
-        <div class="col-3 mt-4">Task3</div>
-        <div class="col-3 mt-4">
+        <div class="col-2 mt-4">Task3</div>
+        <div class="col-2 mt-4" id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              <span class=""></span>Priority</button>
+                <ul class="dropdown-menu text-white">
+                   <li><input type="radio" id="low" name="priority" value="low"/>Low</li>
+                    <li><input type="radio" id="medium" name="priority" value="medium"/>Medium</li>
+                     <li><input type="radio" id="high" name="priority" value="high"/>High</li>
+                </ul>
+
+        </div>
+        <div class="col-2 mt-4">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
               <span class=""></span>Status</button>
@@ -88,7 +121,7 @@
                      <li><input type="radio" id="completed" name="status" value="completed"/>Completed</li>
                 </ul>
         </div>
-        <div class="col-3 mt-4">
+        <div class="col-2 mt-4">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
               <span class=""></span>Assignee</button>
@@ -102,7 +135,7 @@
                        {{/each}}
                 </ul>
           </div>
-        <div class ="col-3 mt-4" id="button-row"><a class="btn btn-dark d-inline-flex xs-smaller" href="/" role="button"><i class="fas fa-info-circle"></i></a><a class="btn btn-dark ml-1 d-inline-flex" href="/" role="button"><i class="far fa-trash-alt"></i></a></div>
+        <div class ="col-4 mt-4" id="button-row"><a class="btn btn-dark d-inline-flex xs-smaller" href="/" role="button"><i class="fas fa-info-circle"></i></a><a class="btn btn-dark ml-1 d-inline-flex" href="/" role="button"><i class="far fa-trash-alt"></i></a></div>
       </div>
      
      
