@@ -5,25 +5,29 @@ const newFormHandler = async function(event) {
     const type = document.querySelector('#tasks_type').value;
     const project_id = document.querySelector('project_id').value;
     const users_with_access = document.querySelector('#select-user').value;
+    const status = "Waiting to start"
    
     
     const token = localStorage.getItem("token");
-    await fetch(`/api/projects`, {
+    await fetch(`/api/tasks`, {
      
       method: "POST",
       body: JSON.stringify({
   
         title,
+        task_text,
         type,
         project_id,
         //priority,
-        users_with_access
+        users_with_access,
+        status
       }),
       headers: {
         "Content-Type": "application/json",
         authorization: `Bearer ${token}`
       }
     }); 
+    /*
     function getUsers() {
       fetch(`/api/tasks`)
       .then(response => {
@@ -38,10 +42,11 @@ const newFormHandler = async function(event) {
         document.querySelector("body").appendChild(select)
       })
     }
+    */
     
-    document.location.replace("/edit-project");
-    getUsers()
+    //document.location.replace("/edit-project");
+    //getUsers()
 };
   document
-    .querySelector("#new_tasks")
+    .querySelector("#new-task-form")
     .addEventListener("submit", newFormHandler);

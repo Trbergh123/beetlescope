@@ -27,16 +27,15 @@ const { authUser } = require('../utils/auth');
 //         res.status(500).json(err);
 //     });
 // });
-
-//res.render('dashboard');
-//});
 router.get('/', (req, res) => {
     Project.findAll({
         
         attributes: [
             'title',
             'project_text',
-            'users_with_access',
+            'priority',
+            'status',
+            'user_id',
             'created_at'
         ]
     })
@@ -46,6 +45,9 @@ router.get('/', (req, res) => {
     })
     
 })
+//router.get('/',  (req, res) => {
+    //res.render('dashboard');
+//});
 
 router.get("/login", (req, res) => {
     if (req.session.loggedIn) {
