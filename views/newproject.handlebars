@@ -4,9 +4,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Create Project</h1>
-            <button type="submit" id="submit-project" onclick="pushproject()" class="btn btn-info">
-                  Add
-                </button>
+            
           </div>
 
           <!-- Content Row -->
@@ -23,18 +21,20 @@
                 <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="project_title">
               </div>
               <div>
-                 
+                 <button type="submit" id="submit-project" onclick="submit" class="btn btn-info">
+                  Add
+                </button>
                 <div class="form-row">
                   <div class="form-group col-12">
-                    <label for="exampleFormControlTextarea1">Description</label>
+                    <label for="project_text">Description</label>
                     <textarea class="form-control" id="project_text" rows="3"></textarea>
                   </div>
                   <div class="form-group col-6">
-                    <label for="exampleFormControlSelect1">Priority</label>
-                    <select id="priority" class="form-control" >
-                      <option class="priority">High</option>
-                      <option class="priority">Normal</option>
-                      <option class="priority">Low</option>
+                    <label for="priority_options">Priority</label>
+                    <select class="form-control" id="priority_options">
+                      <option>High</option>
+                      <option>Normal</option>
+                      <option>Low</option>
                     </select>
                 </div>
                 

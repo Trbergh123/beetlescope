@@ -3,10 +3,11 @@ const newFormHandler = async function(event) {
   
     const title = document.querySelector('#project_title').value;
     const project_text = document.querySelector('#project_text').value;
-    const priority = document.querySelector('option').value;
-    const users_with_access = document.querySelector('#select-user').value;
-   
-    
+    const priority = document.querySelector('#priority_options').value;
+    const status = "In progress";
+
+    // status default is "In progress" because it is not available on the form yet
+
     const token = localStorage.getItem("token");
     await fetch(`/api/projects`, {
      
@@ -15,31 +16,33 @@ const newFormHandler = async function(event) {
   
         title,
         project_text,
-        //priority,
-        users_with_access
+        priority,
+        status,
       }),
       headers: {
         "Content-Type": "application/json",
         authorization: `Bearer ${token}`
       }
-    }); 
-    function getUsers() {
-      fetch(`/api/users`)
-      .then(response => {
-        var select = document.createElement("select") 
-        console.log(respone);
-        response.data.forEach(item => {
-           var option = document.createElement("option")
-           option.value = item;
-           option.textContent = item;
-           select.appendChild(item)
-        })
-        document.querySelector("body").appendChild(select)
-      })
-    }
+    });
+    
+    // function getUsers() {
+    //   fetch(`/api/users`)
+    //   .then(response => {
+    //     var select = document.createElement("select") 
+    //     console.log(response);
+    //     response.data.forEach(item => {
+    //        var option = document.createElement("option")
+    //        option.value = item;
+    //        option.textContent = item;
+    //        select.appendChild(item)
+    //     })
+    //     document.querySelector("body").appendChild(select)
+    //   })
+    // }
+    
     
     document.location.replace("/myprojects");
-    getUsers()
+    // getUsers()
 };
   document
     .querySelector("#new-project-form")

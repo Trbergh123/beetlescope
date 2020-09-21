@@ -20,17 +20,19 @@ Project.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-       //priority: {
-           // type: DataTypes.STRING,
-           // allowNull: false,
-            
-       // },
-        users_with_access: {
+        priority: {
             type: DataTypes.STRING,
-            allowNull:false,
+            allowNull: false
+        },
+        status: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'username'
+                key: 'id'
             }
         }
     },

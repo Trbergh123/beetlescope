@@ -9,7 +9,9 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'project_text',
-            //'priority',
+            'priority',
+            'status',
+            'user_id',
             'created_at'
         ],
         include: [
@@ -33,8 +35,10 @@ router.get('/:id', (req, res) => {
             'id',
             'title',
             'project_text',
-            //'priority',
-            'created_at'
+            'priority',
+            'status',
+            'user_id',
+            'create_at'
         ],
         include: [
             {
@@ -65,17 +69,21 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    Project.create({
-        title: req.body.title,
-        project_text: req.body.project_text,
-        //priority: req.body.priority,
-        users_with_access: req.body.users_with_access
-    })
-    .then(dbProjectData => res.json(dbProjectData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    if(req.session) {
+        Project.create({
+            title: req.body.title,
+            project_text: req.body.project_text,
+            priority: req.body.priority,
+            status: req.body.status,
+            user_id: req.body.user_id
+        })
+        
+        .then(dbProjectData => res.json(dbProjectData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+    }
 });
 
 router.put('/:id', (req, res) => {
