@@ -25,11 +25,13 @@ router.post('/', (req, res) => {
         priority: req.body.priority,
         status: req.body.status,
         user_id: req.session.user_id,
-        type: req.body.type
+        type: req.body.type,
+        project_id: req.body.project_id
+
     })
     .then(dbTaskData => res.json(dbTaskData))
     const newTask = dbTaskData.map(newTask=>newTask.post({plain:true}))
-    res.render('mytasks', {newTask:newTask} )
+    //res.render('mytasks', {newTask:newTask} )
 });
 
 

@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         
         attributes: [
             'title',
-            'task_text',
+            'text',
             'priority',
             'status',
             'user_id',

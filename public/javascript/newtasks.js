@@ -1,33 +1,33 @@
 const newFormHandler = async function(event) {
     event.preventDefault();
   
-    const title = document.querySelector('#tasks_title').value;
-    const type = document.querySelector('#tasks_type').value;
+    const title = document.querySelector('#tasks-title').value;
+    const type = document.querySelector('#tasks-type').value;
     const project_id = document.querySelector('project_id').value;
     const users_with_access = document.querySelector('#select-user').value;
-    const status = "Waiting to start"
+    const task_text = document.querySelector('#task-text').value;
+    const priority = document.querySelector('#priority_options').value;
+    
    
     
     const token = localStorage.getItem("token");
-    await fetch(`/api/tasks`, {
+    await fetch(`/api/projects`, {
      
       method: "POST",
       body: JSON.stringify({
   
         title,
-        task_text,
         type,
+        task_text,
         project_id,
-        //priority,
-        users_with_access,
-        status
+        priority,
+        users_with_access
       }),
       headers: {
         "Content-Type": "application/json",
         authorization: `Bearer ${token}`
       }
     }); 
-    /*
     function getUsers() {
       fetch(`/api/tasks`)
       .then(response => {
@@ -42,11 +42,10 @@ const newFormHandler = async function(event) {
         document.querySelector("body").appendChild(select)
       })
     }
-    */
     
-    //document.location.replace("/edit-project");
-    //getUsers()
+    document.location.replace("/edit-project");
+    getUsers()
 };
   document
-    .querySelector("#new-task-form")
+    .querySelector("#new-tasks-form")
     .addEventListener("submit", newFormHandler);
