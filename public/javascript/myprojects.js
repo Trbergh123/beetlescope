@@ -1,3 +1,20 @@
+// const projectId = document.querySelector('h5[name="project-id"]').value;
+// function projectDetails() {
+//     await fetch(`/api/projects/${projectId}`, {
+//         method: 'GET',
+//         body: JSON.stringify({
+//             title,
+//             project_text,
+//             priority,
+//             status
+//         }),
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     });
+   
+// };
+// document.querySelector('#project-details').addEventListener('click', projectDetails())
 const projectId = document.querySelector('input[name="project-id"]').value;
 
 const editFormHandler = async function(event) {
@@ -6,8 +23,8 @@ const editFormHandler = async function(event) {
   const title = document.querySelector('input[name="project-title"]').value;
   const body = document.querySelector('textarea[name="project-body"]').value;
 
-  await fetch(`/api/projects/${projectId}`, {
-    method: 'PUT',
+  await fetch(`/api/myprojects/${projectId}`, {
+    method: 'GET',
     body: JSON.stringify({
       title,
       body
@@ -39,8 +56,8 @@ const deleteClickHandler = async function() {
 };
 
 document
-  .querySelector('#edit-project-form')
-  .addEventListener('submit', editFormHandler);
+  .querySelector('#project-details')
+  .addEventListener('click', editFormHandler);
 document
   .querySelector('#delete-btn')
   .addEventListener('click', deleteClickHandler);

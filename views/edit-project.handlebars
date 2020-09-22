@@ -3,15 +3,20 @@
 
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Project</h1>
+    <h1 class="h3 mb-0 text-gray-800">Project Details</h1>
 
+       <a href="/newtask"> <button class="btn btn-dark">New task</button></a>
+     
+       <a href="/newproject/{{project.id}}"><button class="btn btn-dark">Edit Project</button></a> 
+      
   </div>
 
   <!-- Content Row -->
-  <div class="row">
-
-    <div class="font-weight-bold text-dark col-6">Project Name<div class="mt-3">Add Project name put</div>
+  <div class="card shadow mb-4">
+    <div class="card-header bg-dark py-3">
+      <h5 class ="m-0 font-weight-bold text-white text-center" name="project-title">Project title: {{project.title}}</h5>
     </div>
+<<<<<<< HEAD
     <div class="col-6 font-weight-bold text-dark">Project description<div class="mt-3">Add project example put</div>
     </div>
     <div class="font-weight-bold col-6">
@@ -25,44 +30,246 @@
         <li class="mt-3">{{title}}<a class="btn btn-primary ml-2" href="" role="button">remove</a></li><a
           class="btn btn-primary mr-2" href="" role="button">Details</a>
       </ul>
+=======
+    <div class="card-body">
+      <div class="row" id="assignee-details">
+        <div class="col-6" id="assignees">Assignee(s): Username </div>
+        <div class="col-6" id="deets">Details: {{project.body}}</div>
+      </div>
+      <div class="row">
+        <div class="col-2 mt-4" id="task-title">Task1</div>
+        
+        <div class="col-1 mt-4 ml-1" id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              
+              <span class=""></span>Priority</button>
+                
+                <ul class="dropdown-menu text-white">
+                   <li><input type="radio" id="low" name="priority" value="low"/>Low</li>
+                    <li><input type="radio" id="medium" name="priority" value="medium"/>Medium</li>
+                     <li><input type="radio" id="high" name="priority" value="high"/>High</li>
+                </ul>
 
-      {{/each}}
+        </div>
+        <div class="col-1 mt-4 ml-5" id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              
+              <span class=""></span>Status</button>
+                
+                <ul class="dropdown-menu text-white">
+                   <li><input type="radio" id="to-do" name="status" value="to-do"/>To do</li>
+                    <li><input type="radio" id="in-progress" name="status" value="in-progress"/>In progress</li>
+                     <li><input type="radio" id="completed" name="status" value="completed"/>Completed</li>
+                </ul>
+        </div>
+        <div class="col-1 mt-4 ml-5" id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              
+              <span class=""></span>Type</button>
+                
+                <ul class="dropdown-menu text-white">
+                   <li><input type="radio" id="bug" name="type" value="bug"/>Bug</li>
+                    <li><input type="radio" id="feature" name="type" value="feature"/>Feature</li>
+                   
+                </ul>
+>>>>>>> 0210fb468926c29333632cacb44a80c8fb359e7d
+
+        </div>
+        <div class="col-2 mt-4 ml-auto"  id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              
+              <span class=""></span>Assignee</button>
+                
+                <ul class="dropdown-menu">
+                    {{#each users}}
+                  <li>
+                    <a  class="small text-white" data-value="option1" tabIndex="-1">
+                      <input type="checkbox" />&nbsp;{{username}} 
+                    </a>
+                  </li>
+                       {{/each}}
+                </ul>
+          </div>
+             
+        <div class ="col-3 mt-4 ml-auto" id="button-row"><a class="btn btn-dark d-inline-flex" href="/task-details/${}" role="button"><i class="fas fa-info-circle"></i></a><a class="btn btn-dark ml-1 d-inline-flex" href="/" role="button"><i class="far fa-trash-alt"></i></a></div>
+      </div>
+      <div class="row">
+        
+        <div class="col-2 mt-4" id="task-title">Task2</div>
+        
+        <div class="col-1 mt-4 ml-1" id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              
+              <span class=""></span>Priority</button>
+                
+                <ul class="dropdown-menu text-white">
+                   <li><input type="radio" id="low" name="priority" value="low"/>Low</li>
+                    <li><input type="radio" id="medium" name="priority" value="medium"/>Medium</li>
+                     <li><input type="radio" id="high" name="priority" value="high"/>High</li>
+                </ul>
+
+        </div>
+        <div class="col-1 mt-4 ml-5" id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              
+              <span class=""></span>Status</button>
+                
+                <ul class="dropdown-menu text-white">
+                   <li><input type="radio" id="to-do" name="status" value="to-do"/>To do</li>
+                    <li><input type="radio" id="in-progress" name="status" value="in-progress"/>In progress</li>
+                     <li><input type="radio" id="completed" name="status" value="completed"/>Completed</li>
+                </ul>
+        </div>
+        <div class="col-1 mt-4 ml-5" id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              
+              <span class=""></span>Type</button>
+                
+                <ul class="dropdown-menu text-white">
+                   <li><input type="radio" id="bug" name="type" value="bug"/>Bug</li>
+                    <li><input type="radio" id="feature" name="type" value="feature"/>Feature</li>
+                   
+                </ul>
+
+        </div>
+        <div class="col-2 mt-4 ml-auto"  id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              
+              <span class=""></span>Assignee</button>
+                
+                <ul class="dropdown-menu">
+                    {{#each users}}
+                  <li>
+                    <a  class="small text-white" data-value="option1" tabIndex="-1">
+                      <input type="checkbox" />&nbsp;{{username}} 
+                    </a>
+                  </li>
+                       {{/each}}
+                </ul>
+          </div>
+        <div class ="col-3 mt-4 ml-auto" id="button-row"><a class="btn btn-dark d-inline-flex" href="/" role="button"><i class="fas fa-info-circle"></i></a><a class="btn btn-dark ml-1 d-inline-flex" href="/" role="button"><i class="far fa-trash-alt"></i></a></div>
+      </div>
+      <div class="row">
+        
+        <div class="col-2 mt-4" id="task-title">Task3</div>
+        
+        <div class="col-1 mt-4 ml-1" id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              
+              <span class=""></span>Priority</button>
+               
+                <ul class="dropdown-menu text-white">
+                   <li><input type="radio" id="low" name="priority" value="low"/>Low</li>
+                    <li><input type="radio" id="medium" name="priority" value="medium"/>Medium</li>
+                     <li><input type="radio" id="high" name="priority" value="high"/>High</li>
+                </ul>
+
+        </div>
+        <div class="col-1 mt-4 ml-5" id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              
+              <span class=""></span>Status</button>
+                
+                <ul class="dropdown-menu text-white">
+                   <li><input type="radio" id="to-do" name="status" value="to-do"/>To do</li>
+                    <li><input type="radio" id="in-progress" name="status" value="in-progress"/>In progress</li>
+                     <li><input type="radio" id="completed" name="status" value="completed"/>Completed</li>
+                </ul>
+        </div>
+        <div class="col-1 mt-4 ml-5" id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              
+              <span class=""></span>Type</button>
+                
+                <ul class="dropdown-menu text-white">
+                   <li><input type="radio" id="bug" name="type" value="bug"/>Bug</li>
+                    <li><input type="radio" id="feature" name="type" value="feature"/>Feature</li>
+                   
+                </ul>
+
+        </div>
+        <div class="col-2 mt-4 ml-auto"  id="hide-options">
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-cog"></span> 
+              
+              <span class=""></span>Assignee</button>
+                
+                <ul class="dropdown-menu">
+                    {{#each users}}
+                  <li>
+                    <a  class="small text-white" data-value="option1" tabIndex="-1">
+                      <input type="checkbox" />&nbsp;{{username}} 
+                    </a>
+                  </li>
+                       {{/each}}
+                </ul>
+          </div>
+        <div class ="col-3 mt-4 ml-auto" id="button-row"><a class="btn btn-dark d-inline-flex" href="/" role="button"><i class="fas fa-info-circle"></i></a><a class="btn btn-dark ml-1 d-inline-flex" href="/" role="button"><i class="far fa-trash-alt"></i></a></div>
+      </div>
+      
     </div>
   </div>
-
-  <div class="row mt-4">
-
-    <div class="font-weight-bold col-6">Assigned<a class="btn-sml txt-sml btn-primary ml-2" href="" role="button">Add
-        User</a>
-      <div class=" mt-3 container">Table of Assigend</div>
-      <ul>
-        {{#each users}}
-        <li class="mt-3">{{username}}<a class="btn btn-primary ml-2" href="" role="button">remove</a></li>
-        {{/each}}
-        <li class="mt-3">Add users assigned<a class="btn btn-primary ml-2" href="" role="button">remove</a></li>
-        <li class="mt-3">Add users assigned<a class="btn btn-primary ml-2" href="" role="button">remove</a></li>
-      </ul>
-    </div>
-
-  </div>
-</div>
 <!-- End of Main Content -->
 
-
-
-
-
-
 </div>
+<style>
+  
+  #button-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+@media (max-width: 625px){
+  #hide-options{
+  display:none;
+}
+}
+@media (max-width: 450px) { 
+  #assignee-details{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+    
+  }
+  #assignees {
+    margin-bottom: 20px;
+  }
+  #deets {
+
+  }
+
+#button-row {
+  display:flex;
+
+}
+#task-title {
+    display: flex;
+    align-items:flex-start;
+   
+  }
+  
+}
+</style>
 <!-- End of Main Content -->
 <script src="/javascript/newproject.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
   integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="/javascript/newtasks.js"></script>
-<!--
-      <script src="javascript/signup.js"></script>
-      -->
+<!--<script src="/javascript/newtasks.js"></script>--->
+<script src="/javascript/editproject.js"></script>
