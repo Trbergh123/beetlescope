@@ -3,7 +3,7 @@ const newFormHandler = async function(event) {
   
     const title = document.querySelector('#tasks-title').value;
     const type = document.querySelector('#tasks-type').value;
-    const project_id = document.querySelector('project_id').value;
+    const project_id = document.querySelector('#project_id').value;
     const users_with_access = document.querySelector('#select-user').value;
     const task_text = document.querySelector('#task-text').value;
     const priority = document.querySelector('#priority_options').value;
@@ -47,5 +47,5 @@ const newFormHandler = async function(event) {
     getUsers()
 };
   document
-    .querySelector("#new-tasks-form")
+    .querySelector("#new_task")
     .addEventListener("submit", newFormHandler);

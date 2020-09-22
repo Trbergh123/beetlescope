@@ -10,67 +10,65 @@
           <!-- Content Row -->
           
           </div>
-          <form id="new-task-form">
-          <div class="container mt-5">
-          <div class="row align-items-center justify-content-center">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="tasks-title">Name of task</span>
-              </div>
-              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="title">
-            </div>
-            <div>
+          <form id="new_task">
+            <div class="container mt-5">
+              <div class="row align-items-center justify-content-center">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="tasks-title">Name of task</span>
+                  </div>
+                  <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="title">
+                </div>
+              <div>
               
                 <div class="form-row">
                   <div class="form-group col-12">
                     <label for="exampleFormControlTextarea1">Description</label>
                     <textarea class="form-control" id="tasks-text" rows="3"></textarea>
-                  </div> <button type="submit" class="button btn-info" id="submit">
-                  Add
-                </button>
+                  </div> 
+                  <button type="submit" class="button btn-info" id="submit_taskbtn">
+                    Add
+                  </button>
                   <div class="form-group col-12">
-                  <label for="assignee">Assignee</label>
-                  <select class ="form-control" id="select-user">
+                    <label for="assignee">Assignee</label>
+                    <select class ="form-control" id="select-user">
                       {{#each users}}
                       <option>{{username}}</option>
 
                       {{/each}}
-                  </select>
-                      <div class="form-group col-12">
-                  <Label for="type">Type</Label>
-                  <select class ="form-control" id="tasks-type">
+                    </select>
+                    <div class="form-group col-12">
+                      <Label for="type">Type</Label>
+                      <select class ="form-control" id="tasks-type">
                      
                       <option>Bug</option>
                       <option>Feature</option>
                       </select>
                   
-                </div>
-                <div class="form-group col-6">
-                    <label for="priority_options">Priority</label>
-                    <select class="form-control" id="priority_options">
-                      <option>High</option>
-                      <option>Normal</option>
-                      <option>Low</option>
-                    </select>
-                </div>
                     </div>
+                    <div class="form-group col-6">
+                      <label for="priority_options">Priority</label>
+                      <select class="form-control" id="priority_options">
+                        <option>High</option>
+                        <option>Normal</option>
+                        <option>Low</option>
+                      </select>
+                    </div>
+                </div>
                    
                     
                   
 
                     
                 
-                
-                
-
-                
-              </form>
+              
               
 
-            </div>
+              </div>
 
+            </div>
+          </form>
           </div>
-        </div>
 
 
           
@@ -85,4 +83,4 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="javascript/signup.js"></script>
+    <script src="javascript/newtasks.js"></script> 
