@@ -6,7 +6,7 @@ const editFormHandler = async function(event) {
   const title = document.querySelector('input[name="project-title"]').value;
   const body = document.querySelector('textarea[name="project-body"]').value;
 
-  await fetch(`/api/post/${projectId}`, {
+  await fetch(`/api/projects/${projectId}`, {
     method: 'PUT',
     body: JSON.stringify({
       title,
@@ -17,7 +17,7 @@ const editFormHandler = async function(event) {
     }
   });
 
-  document.location.replace('/edit-project');
+  document.location.replace('/edit-project/:id');
 };
 await fetch(`/api/users`, {
         
