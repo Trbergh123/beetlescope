@@ -1,8 +1,8 @@
-# BeetleScope
+# BeetleScope - Bug Tracker
 
 ## Description:
 
-This is a fullstack web application that allows users to signup and create a project and tasks for that project. It is designed to help users organize and collaborate with others to create a workspace anyone can use.
+This is a fullstack web application that allows users to create an acoount, create projects and tasks. It is designed to be a project management help-desk to simplify your company’s workflow.
 
 ### Link to deployed app
 https://beetlescope.herokuapp.com/
