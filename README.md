@@ -19,15 +19,15 @@ https://beetlescope.herokuapp.com/
 
 ## Packages/Dependencies
 
--Express
--Handlebars
--mysql
--mysql2
--sequelize
--connect-session-sequelize
--express-handlebars
--express-session
--express-session-sequelize
--dotenv
--bcrypt
--nodemon
+-Express <br>
+-Handlebars <br>
+-mysql <br>
+-mysql2 <br>
+-sequelize <br>
+-connect-session-sequelize <br>
+-express-handlebars <br>
+-express-session <br>
+-express-session-sequelize <br>
+-dotenv <br> 
+-bcrypt <br>
+-nodemon <br>
