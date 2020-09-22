@@ -85,9 +85,28 @@ router.get('/', (req, res) => {
        const users = dbUserData.map(user=>user.get({plain:true}))
         // dbuserdata -> [{username: "Brandon"}, {username: "sam"}]
         res.render('edit-project', {users: users})
-    })
+    });
     
-})
+});
+
+router.get("/newproject/:id", (req, res) => {
+    Project.findByPk(req.params.id)
+      .then(dbProjectData => {
+        if (dbProjectData) {
+          const project = dbProjectData.get({ plain: true });
+          
+          res.render("newproject", {
+            layout: "main",
+            project
+          });
+        } else {
+          res.status(404).end();
+        }
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
+  });
 
   
 module.exports = router;

@@ -3,8 +3,8 @@ const projectId = document.querySelector('input[name="project-id"]').value;
 const editFormHandler = async function(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value;
-  const body = document.querySelector('textarea[name="project-text"]').value;
+  const title = document.querySelector('input[name="project-title"]').value;
+  const body = document.querySelector('textarea[name="project-body"]').value;
 
   await fetch(`/api/post/${projectId}`, {
     method: 'PUT',

@@ -61,4 +61,23 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.get("/edit-project/:id", (req, res) => {
+    Project.findByPk(req.params.id)
+      .then(dbProjectData => {
+        if (dbProjectData) {
+          const project = dbProjectData.get({ plain: true });
+          
+          res.render("edit-project/:id", {
+            layout: "main",
+            project
+          });
+        } else {
+          res.status(404).end();
+        }
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
+  });
+
 module.exports = router;

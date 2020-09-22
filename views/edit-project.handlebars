@@ -6,26 +6,30 @@
     <h1 class="h3 mb-0 text-gray-800">Project Details</h1>
 
        <a href="/newtask"> <button class="btn btn-dark">New task</button></a>
-        <button class="btn btn-dark">Edit Project</button>
+     
+       <a href="/newproject/{{project.id}}"><button class="btn btn-dark">Edit Project</button></a> 
       
   </div>
 
   <!-- Content Row -->
   <div class="card shadow mb-4">
     <div class="card-header bg-dark py-3">
-      <h5 class ="m-0 font-weight-bold text-white text-center" name="project-title">Project title</h5>
+      <h5 class ="m-0 font-weight-bold text-white text-center" name="project-title">Project title: {{project.title}}</h5>
     </div>
     <div class="card-body">
       <div class="row" id="assignee-details">
         <div class="col-6" id="assignees">Assignee(s): Username </div>
-        <div class="col-6" id="deets">Details: this is where you can add some details about the project if you'd ever like to do such a thing.</div>
+        <div class="col-6" id="deets">Details: {{project.body}}</div>
       </div>
       <div class="row">
         <div class="col-2 mt-4" id="task-title">Task1</div>
+        
         <div class="col-1 mt-4 ml-1" id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
+              
               <span class=""></span>Priority</button>
+                
                 <ul class="dropdown-menu text-white">
                    <li><input type="radio" id="low" name="priority" value="low"/>Low</li>
                     <li><input type="radio" id="medium" name="priority" value="medium"/>Medium</li>
@@ -36,7 +40,9 @@
         <div class="col-1 mt-4 ml-5" id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
+              
               <span class=""></span>Status</button>
+                
                 <ul class="dropdown-menu text-white">
                    <li><input type="radio" id="to-do" name="status" value="to-do"/>To do</li>
                     <li><input type="radio" id="in-progress" name="status" value="in-progress"/>In progress</li>
@@ -46,7 +52,9 @@
         <div class="col-1 mt-4 ml-5" id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
+              
               <span class=""></span>Type</button>
+                
                 <ul class="dropdown-menu text-white">
                    <li><input type="radio" id="bug" name="type" value="bug"/>Bug</li>
                     <li><input type="radio" id="feature" name="type" value="feature"/>Feature</li>
@@ -57,7 +65,9 @@
         <div class="col-2 mt-4 ml-auto"  id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
+              
               <span class=""></span>Assignee</button>
+                
                 <ul class="dropdown-menu">
                     {{#each users}}
                   <li>
@@ -68,14 +78,19 @@
                        {{/each}}
                 </ul>
           </div>
-        <div class ="col-3 mt-4 ml-auto" id="button-row"><a class="btn btn-dark d-inline-flex" href="/" role="button"><i class="fas fa-info-circle"></i></a><a class="btn btn-dark ml-1 d-inline-flex" href="/" role="button"><i class="far fa-trash-alt"></i></a></div>
+             
+        <div class ="col-3 mt-4 ml-auto" id="button-row"><a class="btn btn-dark d-inline-flex" href="/task-details/${}" role="button"><i class="fas fa-info-circle"></i></a><a class="btn btn-dark ml-1 d-inline-flex" href="/" role="button"><i class="far fa-trash-alt"></i></a></div>
       </div>
       <div class="row">
+        
         <div class="col-2 mt-4" id="task-title">Task2</div>
+        
         <div class="col-1 mt-4 ml-1" id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
+              
               <span class=""></span>Priority</button>
+                
                 <ul class="dropdown-menu text-white">
                    <li><input type="radio" id="low" name="priority" value="low"/>Low</li>
                     <li><input type="radio" id="medium" name="priority" value="medium"/>Medium</li>
@@ -86,7 +101,9 @@
         <div class="col-1 mt-4 ml-5" id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
+              
               <span class=""></span>Status</button>
+                
                 <ul class="dropdown-menu text-white">
                    <li><input type="radio" id="to-do" name="status" value="to-do"/>To do</li>
                     <li><input type="radio" id="in-progress" name="status" value="in-progress"/>In progress</li>
@@ -96,7 +113,9 @@
         <div class="col-1 mt-4 ml-5" id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
+              
               <span class=""></span>Type</button>
+                
                 <ul class="dropdown-menu text-white">
                    <li><input type="radio" id="bug" name="type" value="bug"/>Bug</li>
                     <li><input type="radio" id="feature" name="type" value="feature"/>Feature</li>
@@ -107,7 +126,9 @@
         <div class="col-2 mt-4 ml-auto"  id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
+              
               <span class=""></span>Assignee</button>
+                
                 <ul class="dropdown-menu">
                     {{#each users}}
                   <li>
@@ -121,11 +142,15 @@
         <div class ="col-3 mt-4 ml-auto" id="button-row"><a class="btn btn-dark d-inline-flex" href="/" role="button"><i class="fas fa-info-circle"></i></a><a class="btn btn-dark ml-1 d-inline-flex" href="/" role="button"><i class="far fa-trash-alt"></i></a></div>
       </div>
       <div class="row">
+        
         <div class="col-2 mt-4" id="task-title">Task3</div>
+        
         <div class="col-1 mt-4 ml-1" id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
+              
               <span class=""></span>Priority</button>
+               
                 <ul class="dropdown-menu text-white">
                    <li><input type="radio" id="low" name="priority" value="low"/>Low</li>
                     <li><input type="radio" id="medium" name="priority" value="medium"/>Medium</li>
@@ -136,7 +161,9 @@
         <div class="col-1 mt-4 ml-5" id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
+              
               <span class=""></span>Status</button>
+                
                 <ul class="dropdown-menu text-white">
                    <li><input type="radio" id="to-do" name="status" value="to-do"/>To do</li>
                     <li><input type="radio" id="in-progress" name="status" value="in-progress"/>In progress</li>
@@ -146,7 +173,9 @@
         <div class="col-1 mt-4 ml-5" id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
+              
               <span class=""></span>Type</button>
+                
                 <ul class="dropdown-menu text-white">
                    <li><input type="radio" id="bug" name="type" value="bug"/>Bug</li>
                     <li><input type="radio" id="feature" name="type" value="feature"/>Feature</li>
@@ -157,7 +186,9 @@
         <div class="col-2 mt-4 ml-auto"  id="hide-options">
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span> 
+              
               <span class=""></span>Assignee</button>
+                
                 <ul class="dropdown-menu">
                     {{#each users}}
                   <li>
@@ -217,14 +248,12 @@
 </style>
 <!-- End of Main Content -->
 <script src="/javascript/newproject.js"></script>
-<script src="/javascript/editproject.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
   integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="/javascript/newtasks.js"></script>
-<!--
-      <script src="javascript/signup.js"></script>
-      -->
+<!--<script src="/javascript/newtasks.js"></script>--->
+<script src="/javascript/editproject.js"></script>
